@@ -26,10 +26,14 @@ const Main = () => {
     paper: {
       backgroundColor: "white",
       border: "2px solid #000",
-      padding: "50px",
+      padding: "20px",
       width: "80%",
       margin: "30px auto 0 auto",
     },
+    modal_one: {
+      height:"650px",
+      overflov:"scrool"
+    }
   };
 
   const {
@@ -79,18 +83,13 @@ const Main = () => {
     <div className="header">
       <div
         className="header_inner"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
       >
         <div className="left">
           <h1>Test</h1>
         </div>
         <div className="header_inner_right">
           {tokken == "111111" ? (
-            <Button variant="contained" style={{ marginRight: "20px" }}>
+            <Button variant="contained" >
               <Link className="link_info" to="/information">
                 Профил
               </Link>
@@ -99,7 +98,7 @@ const Main = () => {
             <Button
               onClick={modalOpen}
               variant="contained"
-              style={{ marginRight: "20px" }}
+              
             >
               Профил
             </Button>
@@ -108,11 +107,7 @@ const Main = () => {
             <Button
               onClick={() => Del()}
               variant="contained"
-              style={{
-                marginRight: "20px",
-                background: "red",
-                color: "white",
-              }}
+              className="red_btn"
             >
               Удалить профил
             </Button>
@@ -125,7 +120,7 @@ const Main = () => {
         </h2>
       ) : null}
       <div>
-        <div className="modal_seans">
+        <div className="modal_one">
           <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
@@ -138,9 +133,10 @@ const Main = () => {
             }}
             style={{
               marginTop: "0",
-              width: "600px",
+              maxWidth: "600px",
               marginLeft: "auto",
               marginRight: "auto",
+              overflow:"scroll"
             }}
           >
             <Fade in={open}>
@@ -243,7 +239,7 @@ const Main = () => {
           </Modal>
         </div>
       </div>
-      <div className="modal_seans">
+      <div className="modal_two">
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -256,7 +252,7 @@ const Main = () => {
           }}
           style={{
             marginTop: "0",
-            width: "500px",
+            maxWidth: "500px",
             marginLeft: "auto",
             marginRight: "auto",
           }}

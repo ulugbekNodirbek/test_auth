@@ -1,9 +1,9 @@
 .auth_block {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
     max-width: 550px;
-    margin: 150px auto;
+    margin: 40px auto 60px 0;
+    min-height: 350px;
 
     form {
         width: 100%;
@@ -69,6 +69,12 @@
     }
 }
 
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .link_info {
     text-decoration: none;
@@ -87,5 +93,40 @@
     .eye {
         cursor: pointer;
         width: 5%;
+    }
+}
+
+.header_inner_right {
+    button {
+        margin-left: 20px;
+    }
+    .red_btn {
+        background:red;
+        color: white;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .info_desc {
+        font-size: 18px;
+    }
+    .left {
+        width: 30%;
+        h1 {
+            margin: 0;
+        }
+    }
+    .header_inner_right {
+        width: 49%;
+    }
+    .header_inner_right button {
+        margin-left: 0;
+        width: 100%;
+    }
+    .header_inner_right .red_btn {
+        margin-top: 10px;
+    }
+    .header_inner {
+     align-items: flex-start;
     }
 }

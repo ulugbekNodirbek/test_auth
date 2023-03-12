@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './information.scss'
 const Information = () => {
-    const dispatch = useDispatch();
     const data = useSelector((state) => state.test);
-    console.log(data,'data');
     return (
       <div className="info_block">
         <div className="info_block_inner">
