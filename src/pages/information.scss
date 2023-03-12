@@ -1,0 +1,18 @@
+.person_info {
+    border:1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+.information_inner {
+    max-width: 600px;
+}
+
+.link {
+    margin: 30px 0;
+    display: block;
+    text-decoration: none;
+    
+}

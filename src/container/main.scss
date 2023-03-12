@@ -1,0 +1,91 @@
+.auth_block {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    max-width: 550px;
+    margin: 150px auto;
+
+    form {
+        width: 100%;
+
+        .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+            display: block;
+            width: 100%;
+
+            .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .select {
+        cursor: pointer;
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 50px;
+    }
+
+    .MuiFormControl-root {
+        display: block;
+        width: 100%;
+    }
+
+    .MuiInputBase-root {
+        width: 100%;
+    }
+
+}
+
+.auth_block .MuiFormControl-root {
+    margin-bottom: 20px;
+}
+
+.auth_block {
+    span {
+        font-weight: bold;
+        color: red;
+    }
+
+    .btn {
+        span {
+            color: black !important;
+        }
+    }
+}
+
+.person_name {}
+
+.header {
+    h2 {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-left: 10px;
+            color: blue;
+        }
+    }
+}
+
+
+.link_info {
+    text-decoration: none;
+    color: black;
+}
+
+.info_desc {
+    color: black;
+}
+
+.password_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .eye {
+        cursor: pointer;
+        width: 5%;
+    }
+}
