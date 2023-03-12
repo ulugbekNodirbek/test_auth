@@ -16,6 +16,8 @@ const Main = () => {
   const modalOpen = () => setMod(true);
   const modalClose = () => setMod(false);
   const dispatch = useDispatch();
+  const [age, setAge] = useState("");
+  const [datas, setDatas] = useState([]);
   const data = useSelector((state) => state.test);
   const classes = {
     modal: {
@@ -42,6 +44,7 @@ const Main = () => {
     setError,
     formState: { errors },
   } = useForm();
+
 
   const onSubmit = (data) => {
     const now = new Date().getTime() - new Date(data.date).getTime();
@@ -70,8 +73,6 @@ const Main = () => {
     dispatch(test_action([]));
   }
 
-  const [age, setAge] = useState("");
-  const [datas, setDatas] = useState([]);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -81,29 +82,21 @@ const Main = () => {
   if (loader) return <Loading />;
   return (
     <div className="header">
-      <div
-        className="header_inner"
-      >
+      <div className="header_inner">
         <div className="left">
           <h1>Test</h1>
         </div>
         <div className="header_inner_right">
-          {tokken == "111111" ? (
+          {tokken === "111111" ? (
             <Link className="link_info" to="/information">
-              <Button variant="contained" >
-                Профил
-              </Button>
+              <Button variant="contained">Профил</Button>
             </Link>
           ) : (
-            <Button
-              onClick={modalOpen}
-              variant="contained"
-              
-            >
+            <Button onClick={modalOpen} variant="contained">
               Профил
             </Button>
           )}
-          {tokken == "111111" ? (
+          {tokken === "111111" ? (
             <Button
               onClick={() => Del()}
               variant="contained"
@@ -114,7 +107,7 @@ const Main = () => {
           ) : null}
         </div>
       </div>
-      {tokken == "111111" ? (
+      {tokken === "111111" ? (
         <h2>
           Добро пожаловать <p className="person_name">{data.Name}</p>
         </h2>
@@ -136,7 +129,7 @@ const Main = () => {
               maxWidth: "600px",
               marginLeft: "auto",
               marginRight: "auto",
-              overflow:"scroll"
+              overflow: "scroll",
             }}
           >
             <Fade in={open}>
