@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main/>} />
         {
-          tokken === '111111' ? <Route path="/information/" element={<Information />} /> : null
+          tokken === '111111' ? <Route path="/information" element={<Information />} /> : null
         }
       </Routes>
     </div>

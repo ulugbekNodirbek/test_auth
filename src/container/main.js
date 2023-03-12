@@ -89,11 +89,11 @@ const Main = () => {
         </div>
         <div className="header_inner_right">
           {tokken == "111111" ? (
-            <Button variant="contained" >
-              <Link className="link_info" to="/information">
+            <Link className="link_info" to="/information">
+              <Button variant="contained" >
                 Профил
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           ) : (
             <Button
               onClick={modalOpen}
