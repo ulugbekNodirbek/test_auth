@@ -5,7 +5,7 @@ import Loading from "../components/loading/loading";
 import { useForm } from "react-hook-form";
 import "./main.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { test_action } from "../redux/action";
+import { test_action, set_token } from "../redux/action";
 import eye from "../assets/eye.svg";
 const Main = () => {
   const [pas, setpas] = useState(true);
@@ -61,6 +61,7 @@ const Main = () => {
     }, 1000);
     setDatas(data);
     localStorage.setItem("tokken", "111111");
+    dispatch(set_token("111111"));
     handleClose();
     modalClose();
     dispatch(test_action(data));
@@ -115,8 +116,6 @@ const Main = () => {
       <div>
         <div className="modal_one">
           <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
             className={classes.modal_one}
             open={open}
             onClose={handleClose}
@@ -132,7 +131,6 @@ const Main = () => {
               overflow: "scroll",
             }}
           >
-            <Fade in={open}>
               <div style={classes.paper}>
                 <div className="auth_block">
                   <form onSubmit={handleSubmit(onSubmit)}>
@@ -160,13 +158,13 @@ const Main = () => {
                       type="tel"
                       placeholder="Mobile"
                       defaultValue={"998"}
-                      {...register("Mobile", {
+                      {...register("tel", {
                         required: true,
                         minLength: 6,
                         maxLength: 12,
                       })}
                     />
-                    {errors.Mobile && (
+                    {errors.tel && (
                       <span>Номер должен содержать не менее 12 числ</span>
                     )}
                     <div className="password_block">
@@ -228,21 +226,16 @@ const Main = () => {
                   </form>
                 </div>
               </div>
-            </Fade>
           </Modal>
         </div>
       </div>
       <div className="modal_two">
         <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
+     
           className={classes.modal_one}
           open={mod}
           onClose={modalClose}
-          closeAfterTransition
-          BackdropProps={{
-            timeout: 400,
-          }}
+       
           style={{
             marginTop: "0",
             maxWidth: "500px",
@@ -250,7 +243,6 @@ const Main = () => {
             marginRight: "auto",
           }}
         >
-          <Fade in={mod}>
             <div style={classes.paper}>
               <div className="auth_block1">
                 <h2 className="info_desc">
@@ -261,7 +253,6 @@ const Main = () => {
                 </Button>
               </div>
             </div>
-          </Fade>
         </Modal>
       </div>
     </div>

@@ -21,7 +21,7 @@ const Information = () => {
             </div>
             <div className="person_info">
               <h3>Номер телефона</h3>
-              <h3>+{data.Mobile}</h3>
+              <h3>+{data.tel}</h3>
             </div>
             <div className="person_info">
               <h3>Год рождения</h3>

@@ -1,5 +1,6 @@
 const initialState = {
-    test: {}
+    test: {},
+    token: null
 }
 
 export const rootReducer = (state = initialState, {
@@ -11,6 +12,12 @@ export const rootReducer = (state = initialState, {
             return {
                 ...state,
                 test: payload
+            }
+    
+        case 'token':
+            return {
+                ...state,
+                token: payload
             }
     
         default:

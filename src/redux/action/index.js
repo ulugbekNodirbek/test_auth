@@ -4,3 +4,9 @@ export const test_action = (payload) => {
         payload
     }
 }
+export const set_token = (payload) => {
+    return {
+        type: 'token',
+        payload
+    }
+}
